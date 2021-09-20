@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <ProgressBar
+        android:id="@+id/loadingbar"
+        android:layout_width="match_parent"
+        android:progressBackgroundTint="#9AC2C1C1"
+        android:progressTint="#0091EA"
+        android:layout_height="5dp"
+        android:layout_alignParentTop="true"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+
+        />
+
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/swiferlayout"
+        tools:layout_behabior="@string/appbar_scrolling_view_bihabior"
+        android:layout_height="match_parent"
+        android:layout_below="@id/loadingbar"
+        >
+
+
+    <WebView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"
+        />
+
+    <ScrollView
+        android:id="@+id/mscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:id="@+id/nointernet"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="350dp"
+            android:padding="50dp"
+            android:scaleType="centerCrop"
+            app:lottie_rawRes="@raw/nointernet"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="20dp"
+            android:layout_height="wrap_content"
+            android:text="OPPS!\nNO INTERNET"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please check your internet connection"
+            android:textSize="16dp"
+            android:layout_marginTop="5dp"
+            android:paddingHorizontal="20dp"
+            android:layout_gravity="center"
+            android:textColor="#5E5D5D"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Try Again"
+            android:id="@+id/tryagain"
+            android:paddingHorizontal="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="17dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
